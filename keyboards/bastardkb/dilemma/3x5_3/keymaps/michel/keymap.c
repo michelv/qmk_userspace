@@ -183,16 +183,16 @@ enum combos {
   KX_COMMENT,
 };
 
-const uint16_t PROGMEM AQUOT_combo[] = {LGUI_T(KC_A), KC_QUOT, COMBO_END};
+const uint16_t PROGMEM AQUOT_combo[] = {LCTL_T(KC_A), KC_QUOT, COMBO_END};
 const uint16_t PROGMEM OCOMM_combo[] = {LALT_T(KC_O), KC_COMM, COMBO_END};
-const uint16_t PROGMEM EDOT_combo[] = {LCTL_T(KC_E), KC_DOT, COMBO_END};
+const uint16_t PROGMEM EDOT_combo[] = {LGUI_T(KC_E), KC_DOT, COMBO_END};
 const uint16_t PROGMEM UP_combo[] = {LSFT_T(KC_U), KC_P, COMBO_END};
 const uint16_t PROGMEM IY_combo[] = {KC_I, KC_Y, COMBO_END};
 const uint16_t PROGMEM DF_combo[] = {KC_D, KC_F, COMBO_END};
 const uint16_t PROGMEM HG_combo[] = {RSFT_T(KC_H), KC_G, COMBO_END};
-const uint16_t PROGMEM TC_combo[] = {RCTL_T(KC_T), KC_C, COMBO_END};
+const uint16_t PROGMEM TC_combo[] = {RGUI_T(KC_T), KC_C, COMBO_END};
 const uint16_t PROGMEM NR_combo[] = {LALT_T(KC_N), KC_R, COMBO_END};
-const uint16_t PROGMEM SL_combo[] = {RGUI_T(KC_S), KC_L, COMBO_END};
+const uint16_t PROGMEM SL_combo[] = {RCTL_T(KC_S), KC_L, COMBO_END};
 const uint16_t PROGMEM UH_combo[] = {LSFT_T(KC_U), RSFT_T(KC_H), COMBO_END};
 const uint16_t PROGMEM COMMDOT_combo[] = {KC_COMM, KC_DOT, COMBO_END};
 const uint16_t PROGMEM DOTP_combo[] = {KC_DOT, KC_P, COMBO_END};
