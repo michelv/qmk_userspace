@@ -3,6 +3,7 @@
     "build_targets": [
         ["bastardkb/dilemma/3x5_3", "michel"],
         ["bastardkb/skeletyl", "michel"],
+        ["keyball/keyball39", "michel"],
         ["crkbd/rev1", "michel"]
     ]
 }

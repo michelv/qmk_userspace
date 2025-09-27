@@ -1,0 +1,7 @@
+# MCU=atmega32u4
+# CONVERT_TO=rp2040_ce
+RGBLIGHT_ENABLE=no
+COMBO_ENABLE = yes
+MOUSEKEY_ENABLE = yes
+SRC += casemodes.c
+OLED_ENABLE = yes
