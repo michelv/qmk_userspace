@@ -1,9 +1,6 @@
 {
     "userspace_version": "1.0",
     "build_targets": [
-        ["bastardkb/dilemma/3x5_3", "michelv"],
-        ["bastardkb/dilemma/3x5_3_trackball", "michelv"],
-        ["bastardkb/skeletyl/splinktegrated_rev1", "michelv"],
-        ["crkbd/rev1", "michelv"]
+        ["keyball/keyball39", "michel"]
     ]
 }
