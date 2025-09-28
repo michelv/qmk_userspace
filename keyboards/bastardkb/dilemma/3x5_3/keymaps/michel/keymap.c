@@ -56,7 +56,7 @@ enum dilemma_keymap_layers {
   /** ├──────────────────────────────────────────┤ ├──────────────────────────────────────────┤ */ \
         KC_SCLN, KC_Q,    KC_J,    KC_K,    KC_X,        KC_B,    KC_M,    KC_W,    KC_V,    KC_Z,         \
   /** ╰──────────────────────────────────────────┤ ├──────────────────────────────────────────╯ */ \
-                          TAB_FUN, BSP_NAV, KC_GRV,     SPC_NUM, ENT_SYM, KC_ESC
+                          TAB_FUN, BSP_NAV, KC_GRV,      SPC_NUM, ENT_SYM, KC_ESC
   /**                 ╰───────────────────────────╯ ╰───────────────────────────╯                          */
 
 /** Convenience row shorthands. */
