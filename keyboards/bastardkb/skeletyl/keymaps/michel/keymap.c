@@ -27,9 +27,6 @@ enum dilemma_keymap_layers {
     LAYER_SYMBOLS = 5,
 };
 
-// Automatically enable sniping-mode on the pointer layer.
-// #define DILEMMA_AUTO_SNIPING_ON_LAYER LAYER_POINTER
-
 #define SPC_NAV LT(LAYER_NAVIGATION, KC_SPC)
 #define SPC_NUM LT(LAYER_NUMERAL, KC_SPC)
 #define TAB_FUN LT(LAYER_FUNCTION, KC_TAB)

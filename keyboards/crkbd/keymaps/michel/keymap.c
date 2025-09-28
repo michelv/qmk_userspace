@@ -19,16 +19,13 @@
 #include QMK_KEYBOARD_H
 
 enum dilemma_keymap_layers {
-    LAYER_BASE       = 0,
-    LAYER_FUNCTION   = 1,
+    LAYER_BASE = 0,
+    LAYER_FUNCTION = 1,
     LAYER_NAVIGATION = 2,
-    LAYER_POINTER    = 3,
-    LAYER_NUMERAL    = 4,
-    LAYER_SYMBOLS    = 5,
+    LAYER_POINTER = 3,
+    LAYER_NUMERAL = 4,
+    LAYER_SYMBOLS = 5,
 };
-
-// Automatically enable sniping-mode on the pointer layer.
-// #define DILEMMA_AUTO_SNIPING_ON_LAYER LAYER_POINTER
 
 #define SPC_NAV LT(LAYER_NAVIGATION, KC_SPC)
 #define SPC_NUM LT(LAYER_NUMERAL, KC_SPC)
@@ -43,7 +40,7 @@ enum dilemma_keymap_layers {
 #    define DPI_MOD KC_NO
 #    define S_D_MOD KC_NO
 #    define SNIPING KC_NO
-#    define XXXXXXX KC_NO
+#    define DRG_TOG KC_NO
 #endif // !POINTING_DEVICE_ENABLE
 
 // clang-format off
@@ -102,7 +99,7 @@ enum dilemma_keymap_layers {
   /** ├──────────────────────────────────────────┤ ├──────────────────────────────────────────┤ */ \
         ______________HOME_ROW_CAGS_L______________,     ______________HOME_ROW_CAGS_R______________,      \
   /** ├──────────────────────────────────────────┤ ├──────────────────────────────────────────┤ */ \
-        _______, XXXXXXX, SNIPING, MS_BTN5, MS_BTN4,     MS_BTN4, MS_BTN5, SNIPING, XXXXXXX, _______,      \
+        _______, DRG_TOG, SNIPING, MS_BTN5, MS_BTN4,     MS_BTN4, MS_BTN5, SNIPING, DRG_TOG, _______,      \
   /** ╰──────────────────────────────────────────┤ ├──────────────────────────────────────────╯ */ \
                           MS_BTN3, MS_BTN2, MS_BTN1,     MS_BTN1, MS_BTN2, MS_BTN3
   /**                 ╰───────────────────────────╯ ╰───────────────────────────╯                          */
