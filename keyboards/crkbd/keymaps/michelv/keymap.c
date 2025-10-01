@@ -180,6 +180,7 @@ enum combos {
   AE_EGRAVE,
   EU_EUMLAUT,
   EO_EACUTE,
+  EJ_ECIRC,
   AO_AGRAVE,
   UI_UGRAVE,
 };
@@ -200,10 +201,11 @@ const uint16_t PROGMEM DOTP_combo[] = {KC_DOT, KC_P, COMBO_END};
 const uint16_t PROGMEM KX_combo[] = {KC_K, KC_X, COMBO_END};
 const uint16_t PROGMEM BM_combo[] = {KC_B, KC_M, COMBO_END};
 const uint16_t PROGMEM AE_combo[] = {LCTL_T(KC_A), LGUI_T(KC_E), COMBO_END};
-// const uint16_t PROGMEM EU_combo[] = {LGUI_T(KC_E), LSFT_T(KC_U), COMBO_END};
-// const uint16_t PROGMEM EO_combo[] = {LGUI_T(KC_E), LALT_T(KC_O), COMBO_END};
-// const uint16_t PROGMEM AO_combo[] = {LCTL_T(KC_A), LALT_T(KC_O), COMBO_END};
-// const uint16_t PROGMEM UI_combo[] = {LSFT_T(KC_U), KC_I, COMBO_END};
+const uint16_t PROGMEM EU_combo[] = {LGUI_T(KC_E), LSFT_T(KC_U), COMBO_END};
+const uint16_t PROGMEM EO_combo[] = {LGUI_T(KC_E), LALT_T(KC_O), COMBO_END};
+const uint16_t PROGMEM EJ_combo[] = {LGUI_T(KC_E), KC_J, COMBO_END};
+const uint16_t PROGMEM AO_combo[] = {LCTL_T(KC_A), LALT_T(KC_O), COMBO_END};
+const uint16_t PROGMEM UI_combo[] = {LSFT_T(KC_U), KC_I, COMBO_END};
 
 combo_t key_combos[] = {
   [AQUOT_EXLM] = COMBO(AQUOT_combo, KC_EXLM),
@@ -222,10 +224,11 @@ combo_t key_combos[] = {
   [KX_COMMENT] = COMBO(KX_combo, LGUI(KC_SLSH)),
   [BM_HOME_DIR] = COMBO_ACTION(BM_combo),
   [AE_EGRAVE] = COMBO_ACTION(AE_combo),
-//   [EU_EUMLAUT] = COMBO_ACTION(EU_combo),
-//   [EO_EACUTE] = COMBO_ACTION(EO_combo),
-//   [AO_AGRAVE] = COMBO_ACTION(AO_combo),
-//   [UI_UGRAVE] = COMBO_ACTION(UI_combo),
+  [EU_EUMLAUT] = COMBO_ACTION(EU_combo),
+  [EO_EACUTE] = COMBO_ACTION(EO_combo),
+  [EJ_ECIRC] = COMBO_ACTION(EJ_combo),
+  [AO_AGRAVE] = COMBO_ACTION(AO_combo),
+  [UI_UGRAVE] = COMBO_ACTION(UI_combo),
 };
 
 void process_combo_event(uint16_t combo_index, bool pressed) {
@@ -247,10 +250,32 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
       break;
     case AE_EGRAVE:
       if (pressed) {
-        // SEND_STRING(SS_LALT(KC_GRV) "e");
-        // _delay_ms(10);
-        // SEND_STRING("e");
+        SEND_STRING(SS_LALT("`") SS_DELAY(100) "e");
+      }
+      break;
+    case EU_EUMLAUT:
+      if (pressed) {
+        SEND_STRING(SS_LALT("u") SS_DELAY(100) "e");
+      }
+      break;
+    case EO_EACUTE:
+      if (pressed) {
         SEND_STRING(SS_LALT("e") SS_DELAY(100) "e");
+      }
+      break;
+    case EJ_ECIRC:
+      if (pressed) {
+        SEND_STRING(SS_LALT("i") SS_DELAY(100) "e");
+      }
+      break;
+    case AO_AGRAVE:
+      if (pressed) {
+        SEND_STRING(SS_LALT("`") SS_DELAY(100) "a");
+      }
+      break;
+    case UI_UGRAVE:
+      if (pressed) {
+        SEND_STRING(SS_LALT("`") SS_DELAY(100) "u");
       }
       break;
   }
