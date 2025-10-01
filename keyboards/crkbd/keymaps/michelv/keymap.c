@@ -176,6 +176,12 @@ enum combos {
   COMMDOT_DOUBLEARROW,
   DOTP_ARROW,
   KX_COMMENT,
+  BM_HOME_DIR,
+  AE_EGRAVE,
+  EU_EUMLAUT,
+  EO_EACUTE,
+  AO_AGRAVE,
+  UI_UGRAVE,
 };
 
 const uint16_t PROGMEM AQUOT_combo[] = {LCTL_T(KC_A), KC_QUOT, COMBO_END};
@@ -191,7 +197,13 @@ const uint16_t PROGMEM SL_combo[] = {RCTL_T(KC_S), KC_L, COMBO_END};
 const uint16_t PROGMEM UH_combo[] = {LSFT_T(KC_U), RSFT_T(KC_H), COMBO_END};
 const uint16_t PROGMEM COMMDOT_combo[] = {KC_COMM, KC_DOT, COMBO_END};
 const uint16_t PROGMEM DOTP_combo[] = {KC_DOT, KC_P, COMBO_END};
-const uint16_t PROGMEM KX_combo[]    = {KC_K, KC_X, COMBO_END};
+const uint16_t PROGMEM KX_combo[] = {KC_K, KC_X, COMBO_END};
+const uint16_t PROGMEM BM_combo[] = {KC_B, KC_M, COMBO_END};
+const uint16_t PROGMEM AE_combo[] = {LCTL_T(KC_A), LGUI_T(KC_E), COMBO_END};
+const uint16_t PROGMEM EU_combo[] = {LGUI_T(KC_E), LSFT_T(KC_U), COMBO_END};
+const uint16_t PROGMEM EO_combo[] = {LGUI_T(KC_E), LALT_T(KC_O), COMBO_END};
+const uint16_t PROGMEM AO_combo[] = {LCTL_T(KC_A), LALT_T(KC_O), COMBO_END};
+const uint16_t PROGMEM UI_combo[] = {LSFT_T(KC_U), KC_I, COMBO_END};
 
 combo_t key_combos[] = {
   [AQUOT_EXLM] = COMBO(AQUOT_combo, KC_EXLM),
@@ -208,6 +220,12 @@ combo_t key_combos[] = {
   [COMMDOT_DOUBLEARROW] = COMBO_ACTION(COMMDOT_combo),
   [DOTP_ARROW] = COMBO_ACTION(DOTP_combo),
   [KX_COMMENT] = COMBO(KX_combo, LGUI(KC_SLSH)),
+  [BM_HOME_DIR] = COMBO_ACTION(BM_combo),
+  [AE_EGRAVE] = COMBO_ACTION(AE_combo),
+  [EU_EUMLAUT] = COMBO_ACTION(EU_combo),
+  [EO_EACUTE] = COMBO_ACTION(EO_combo),
+  [AO_AGRAVE] = COMBO_ACTION(AO_combo),
+  [UI_UGRAVE] = COMBO_ACTION(UI_combo),
 };
 
 void process_combo_event(uint16_t combo_index, bool pressed) {
@@ -220,6 +238,18 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
     case DOTP_ARROW:
       if (pressed) {
         SEND_STRING("->");
+      }
+      break;
+    case BM_HOME_DIR:
+      if (pressed) {
+        SEND_STRING("~/");
+      }
+      break;
+    case AE_EGRAVE:
+      if (pressed) {
+        SEND_STRING(SS_LALT(KC_GRV) "e");
+        _delay_ms(10);
+        SEND_STRING("e");
       }
       break;
   }
