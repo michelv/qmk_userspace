@@ -32,18 +32,6 @@ enum my_keymap_layers {
 #define ______________HOME_ROW_CAGS_L______________ KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, XXXXXXX
 #define ______________HOME_ROW_CAGS_R______________ XXXXXXX, KC_LSFT, KC_LGUI, KC_LALT, KC_LCTL
 
-#ifdef TUCKY_THUMBS_L
-#    define ____ALPHAS_THUMBS_L______ KC_GRV, TAB_FUN, BSP_NAV
-#else
-#    define ____ALPHAS_THUMBS_L______ TAB_FUN, BSP_NAV, KC_GRV
-#endif // TUCKY_THUMBS_L
-#ifdef TUCKY_THUMBS_R
-#    define ____ALPHAS_THUMBS_R______ SPC_NUM, ENT_SYM, KC_ESC
-#else
-#    define ____ALPHAS_THUMBS_R______ KC_ESC,  SPC_NUM, ENT_SYM
-#endif // TUCKY_THUMBS_R
-
-
 /** Base layer */
 #define _____________TOP_ALPHAS_ROW_L______________ KC_QUOT, KC_COMM, KC_DOT,  KC_P,    KC_Y
 #define _____________TOP_ALPHAS_ROW_R______________ KC_F,    KC_G,    KC_C,    KC_R,    KC_L
