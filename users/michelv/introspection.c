@@ -5,6 +5,7 @@
  */
 
 enum combos {
+    /** Single characters. */
     AQUOT_EXLM,
     OCOMM_AT,
     EDOT_HASH,
@@ -15,9 +16,13 @@ enum combos {
     TC_ASTR,
     NR_LPRN,
     SL_RPRN,
+    /** Functions. */
     UH_CAPSWORD,
+    /** Bigrams/trigrams. */
     COMMDOT_DOUBLEARROW,
     DOTP_ARROW,
+    BM_HOME_DIR,
+    /** Shortcuts. */
     KX_COMMENT,
 };
 
@@ -34,6 +39,7 @@ const uint16_t PROGMEM SL_combo[]      = {RCTL_T(KC_S), KC_L, COMBO_END};
 const uint16_t PROGMEM UH_combo[]      = {LSFT_T(KC_U), RSFT_T(KC_H), COMBO_END};
 const uint16_t PROGMEM COMMDOT_combo[] = {KC_COMM, KC_DOT, COMBO_END};
 const uint16_t PROGMEM DOTP_combo[]    = {KC_DOT, KC_P, COMBO_END};
+const uint16_t PROGMEM BM_combo[]      = {KC_B, KC_M, COMBO_END};
 const uint16_t PROGMEM KX_combo[]      = {KC_K, KC_X, COMBO_END};
 
 // clang-format off
@@ -52,6 +58,7 @@ combo_t key_combos[] = {
     [UH_CAPSWORD]         = COMBO(UH_combo, CW_TOGG),
     [COMMDOT_DOUBLEARROW] = COMBO_ACTION(COMMDOT_combo),
     [DOTP_ARROW]          = COMBO_ACTION(DOTP_combo),
+    [BM_HOME_DIR]         = COMBO_ACTION(BM_combo),
     [KX_COMMENT]          = COMBO(KX_combo, LGUI(KC_SLSH)),
 };
 
@@ -67,6 +74,11 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
         case DOTP_ARROW:
             if (pressed) {
                 SEND_STRING("->");
+            }
+            break;
+        case BM_HOME_DIR:
+            if (pressed) {
+                SEND_STRING("~/");
             }
             break;
     }
