@@ -60,6 +60,7 @@ combos:
   - {p: [9, 19], k: ')', l: [Dvorak]}
   - {p: [13, 16], k: 'Caps Word', l: [Dvorak]}
   - {p: [23, 24], k: '⌘/', l: [Dvorak]}
+  - {p: [25, 26], k: '~/', l: [Dvorak]}
 
 draw_config:
   # specify the size to bound the vertical dimension of your glyph, below are defaults
