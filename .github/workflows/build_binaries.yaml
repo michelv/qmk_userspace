@@ -10,8 +10,10 @@ jobs:
     name: 'QMK master'
     uses: qmk/.github/.github/workflows/qmk_userspace_build.yml@main
     with:
-      qmk_repo: qmk/qmk_firmware
-      qmk_ref: '0.30.3'
+      qmk_repo: bastardkb/bastardkb-qmk
+      qmk_ref: bkb-master
+    #   qmk_repo: qmk/qmk_firmware
+    #   qmk_ref: '0.30.3'
 
   build_bastardkb:
     name: 'bastardkb-qmk'
