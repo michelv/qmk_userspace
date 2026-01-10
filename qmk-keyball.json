@@ -1,6 +1,6 @@
 {
     "userspace_version": "1.0",
     "build_targets": [
-        ["crkbd/rev1", "michelv"]
+        ["keyball/keyball39", "michelv"]
     ]
 }

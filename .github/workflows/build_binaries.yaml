@@ -7,14 +7,23 @@ permissions:
 
 jobs:
   build:
-    name: 'QMK Userspace Build'
+    name: 'QMK master'
+    uses: qmk/.github/.github/workflows/qmk_userspace_build.yml@main
+    with:
+      qmk_repo: qmk/qmk_firmware
+      qmk_ref: master
+
+  build_bastardkb:
+    name: 'bastardkb-qmk'
     uses: qmk/.github/.github/workflows/qmk_userspace_build.yml@main
     with:
       qmk_repo: bastardkb/bastardkb-qmk
       qmk_ref: bkb-master
+      preparation_command: |
+        mv qmk.json qmk-main.json && mv qmk-bastardkb.json qmk.json
 
   publish:
     name: 'QMK Userspace Publish'
     uses: qmk/.github/.github/workflows/qmk_userspace_publish.yml@main
     if: always() && !cancelled()
-    needs: build
+    needs: [build, build_bastardkb]
