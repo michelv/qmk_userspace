@@ -28,4 +28,12 @@ jobs:
     name: 'QMK Userspace Publish'
     uses: qmk/.github/.github/workflows/qmk_userspace_publish.yml@main
     if: always() && !cancelled()
-    needs: [build, build_bastardkb]
+    needs: [build]
+
+  publish_bastardkb:
+    name: 'QMK Userspace Publish'
+    uses: qmk/.github/.github/workflows/qmk_userspace_publish.yml@main
+    if: always() && !cancelled()
+    needs: [build_bastardkb]
+    with:
+      release_name: Firmware-bastardkb
