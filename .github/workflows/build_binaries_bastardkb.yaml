@@ -12,6 +12,8 @@ jobs:
     with:
       qmk_repo: bastardkb/bastardkb-qmk
       qmk_ref: bkb-master
+      preparation_command: |
+        mv qmk.json qmk-main.json && mv qmk-bastardkb.json qmk.json
 
   publish:
     name: 'QMK Userspace Publish'
