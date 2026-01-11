@@ -11,7 +11,8 @@ jobs:
     uses: qmk/.github/.github/workflows/qmk_userspace_build.yml@main
     with:
       qmk_repo: holykeebs/qmk_firmware
-      qmk_ref: c10fa28257f0459cfee2565fee78ed0d07206bf9
+    #   qmk_ref: c10fa28257f0459cfee2565fee78ed0d07206bf9
+      qmk_ref: hk-master
 
   publish:
     name: 'QMK Userspace Publish'
