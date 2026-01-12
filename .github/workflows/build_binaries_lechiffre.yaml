@@ -1,0 +1,22 @@
+name: Build QMK firmware
+
+on: [push, workflow_dispatch]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: 'QMK Userspace Build'
+    uses: sporkus/qmk_userspace/blob/main/.github/workflows/build-qmk-userspace.yml@main
+    with:
+      qmk_repo: sporkus/qmk_userspace
+      qmk_ref: main
+      preparation_command: |
+        mv qmk.json qmk-main.json && mv qmk-lechiffre.json qmk.json
+
+  publish:
+    name: 'QMK Userspace Publish'
+    uses: sporkus/qmk_userspace/blob/main/.github/workflows/publish-qmk-userspace.yml@main
+    if: always() && !cancelled()
+    needs: build
