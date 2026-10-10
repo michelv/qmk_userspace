@@ -41,6 +41,9 @@ enum dilemma_keymap_layers {
 #    define DRG_TOG KC_NO
 #endif // !POINTING_DEVICE_ENABLE
 
+#define RGB_TOG RM_TOGG
+#define RGB_VAI RM_VALU
+
 // clang-format off
 /** \brief QWERTY layout (3 rows, 10 columns). */
 #define LAYOUT_LAYER_BASE                                                                     \

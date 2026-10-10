@@ -23,10 +23,8 @@ enum my_keymap_layers {
 #    define DRG_TOG KC_NO
 #endif // !POINTING_DEVICE_ENABLE
 
-// tmp no rgb?
 #define RGB_TOG RM_TOGG
-#define RGB_M_P _______
-#define RGB_VAI _______
+#define RGB_VAI RM_VALU
 
 // clang-format off
 
