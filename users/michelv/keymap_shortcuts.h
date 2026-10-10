@@ -23,6 +23,9 @@ enum my_keymap_layers {
 #    define DRG_TOG KC_NO
 #endif // !POINTING_DEVICE_ENABLE
 
+#define RGB_TOG RM_TOGG
+#define RGB_VAI RM_VALU
+
 // clang-format off
 
 /** Convenience row shorthands. */
